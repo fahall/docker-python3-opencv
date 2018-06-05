@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  workspace:
+    build:
+      context: .
+      shm_size: '16g'
+    ports:
+     - "5000:5000"
+    volumes:
+     - ../container_fs/code:/app/code
+     - ./python_libs.txt:/python_libs.txt
+     - /mnt/data/alex/data:/app/data
+    stdin_open: true
+    tty: true
