@@ -39,6 +39,7 @@ RUN apt-get -y update && apt-get -y install python$PYTHON_VERSION-dev wget unzip
     && apt-get clean \
     && rm -rf /opencv /opencv_contrib /var/lib/apt/lists/*
 
+RUN pip3 install -r /app/code/python_libs.txt
 # Define default command.
 CMD ["/bin/bash"]
 
